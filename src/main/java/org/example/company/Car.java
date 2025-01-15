@@ -1,10 +1,10 @@
 package org.example.company;
 
 public class Car {
-    private boolean engine;
-    private int cylinders;
-    private String name;
-    private int wheels;
+    private final boolean engine;
+    private final int cylinders;
+    private final String name;
+    private final int wheels;
 
     public Car(int cylinders, String name){
         this.cylinders = cylinders;
