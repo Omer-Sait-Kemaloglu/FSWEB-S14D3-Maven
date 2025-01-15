@@ -42,17 +42,20 @@ public class Car {
         return cylinders == car.cylinders && name.equals(car.name);
     }
 
-    public void startEngine(){
+    public short startEngine(){
         System.out.println(getClass().getSimpleName() + ": the car's engine is starting.");
 
+        return 0;
     }
 
-    public void accelerate(){
+    public short accelerate(){
         System.out.println(getClass().getSimpleName() + ": the car is accelerating.");
 
+        return 0;
     }
 
-    public void brake(){
+    public short brake(){
         System.out.println(getClass().getSimpleName() + ": the car is braking.");
+        return 0;
     }
 }

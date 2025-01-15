@@ -10,6 +10,12 @@ public class GasPoweredCar  extends  CarSkeleton{
       this.cylinders = cylinders;
     }
 
+
+
+    public int getCylinders() {
+        return cylinders;
+    }
+
     @Override
     public void startEngine(){
         System.out.println("GasPoweredCar: Starting a gas-powered engine with " + cylinders + " cylinders.");

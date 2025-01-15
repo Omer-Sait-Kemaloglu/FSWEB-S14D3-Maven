@@ -6,17 +6,20 @@ public class Holden extends Car {
     }
 
     @Override
-    public void startEngine(){
+    public short startEngine(){
         System.out.println(getClass().getSimpleName() + ":  the Holden's engine is starting.");
+        return 0;
     }
 
     @Override
-    public void accelerate(){
+    public short accelerate(){
         System.out.println(getClass().getSimpleName() + ": the Holden is accelerating.");
+        return 0;
     }
 
     @Override
-    public void brake(){
+    public short brake(){
         System.out.println(getClass().getSimpleName() + ": the Holden is braking.");
+        return 0;
     }
 }
