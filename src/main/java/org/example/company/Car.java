@@ -1,61 +1,63 @@
 package org.example.company;
 
+import java.util.Objects;
+
 public class Car {
     private final boolean engine;
     private final int cylinders;
     private final String name;
     private final int wheels;
 
-    public Car(int cylinders, String name){
-        this.cylinders = cylinders;
-        this.name = name;
+    public Car(int cylinders, String name) {
         this.engine = true;
         this.wheels = 4;
+        this.cylinders = cylinders;
+        this.name = name;
     }
 
-    public int getCylinders(){
-        return cylinders;
-    }
-
-    public String getName(){
+    public String getName() {
         return name;
     }
 
+    public int getCylinders() {
+        return cylinders;
+    }
+
+    public String startEngine() {
+        System.out.println(getClass().getSimpleName() + ": the car's engine is starting");
+        return "the car's engine is starting";
+    }
+
+    public String accelerate() {
+        System.out.println(getClass().getSimpleName() + ": the car is accelerating");
+        return "the car is accelerating";
+    }
+
+    public String brake() {
+        System.out.println(getClass().getSimpleName() + ": the car is braking");
+        return "the car is braking";
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Car{" +
                 "engine=" + engine +
                 ", cylinders=" + cylinders +
                 ", name='" + name + '\'' +
                 ", wheels=" + wheels +
                 '}';
-
     }
 
     @Override
-
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Car car = (Car) obj;
-        return cylinders == car.cylinders && name.equals(car.name);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return cylinders == car.cylinders && Objects.equals(name, car.name);
     }
 
-    public short startEngine(){
-        System.out.println(getClass().getSimpleName() + ": the car's engine is starting.");
-
-        return 0;
-    }
-
-    public short accelerate(){
-        System.out.println(getClass().getSimpleName() + ": the car is accelerating.");
-
-        return 0;
-    }
-
-    public short brake(){
-        System.out.println(getClass().getSimpleName() + ": the car is braking.");
-        return 0;
+    @Override
+    public int hashCode() {
+        return Objects.hash(cylinders, name);
     }
 }
